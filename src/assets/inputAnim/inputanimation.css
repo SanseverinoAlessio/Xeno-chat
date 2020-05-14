@@ -1,0 +1,4 @@
+.inputcontainer.active label{font-size: 0.9rem; transform: translateY(-7px);}
+.inputcontainer label{pointer-events: none;transition: 0.5s;position: absolute; opacity: 0.8;
+  margin-left: 10px; margin-top: 10px;z-index: 1; font-size: 1.1rem}
+.inputcontainer input{position: relative;padding-left: 10px;padding-top: 10px; padding-right: 10px}

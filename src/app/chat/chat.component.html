@@ -1,0 +1,61 @@
+<app-rooms (reconnected)="reconnect = false" [reconnect]="reconnect" (deleteMessage)="messages=[];" (changeRoomName)="changeRoomName($event);" (closeRooms)="roomsActive=false;" [closeAll]="closeAll"  [roomsActive]="roomsActive" ></app-rooms>
+<app-reconnect (reconnectEv)="reconnectSocket()"  [sameAccount]="sameAccount"></app-reconnect>
+<div  class="d-flex chat-container  ">
+
+<app-chat-sidebar  [closeAll]="closeAll" class="chat-sidebar" (isclosed)="sidebarStatus=false; closeAll=false;" [sidebarStatus]='sidebarStatus'></app-chat-sidebar>
+<div (click)="closeAll=true;" [class.active]="sidebarStatus||onlineUsersActive||roomsActive||sameAccount"  id="filter"></div>
+<div  class="contenitore">
+<div  style="height:100%; width:100%" class="d-flex ">
+  <div class="desktop-bar">
+  <div class="d-flex">
+  <a  (click)="openRooms($event);" class="change-room-button">
+  <img class="change-icon" src="../../assets/Icon/comment.svg">
+  </a>
+  <div style=" margin-left: 10px; margin-top: 9px;">
+  <h3>#{{room}}</h3>
+  <p>Cambia stanza attraverso il bottone posto sulla sinistra</p>
+  </div>
+  </div>
+  </div>
+  <div class="barra">
+  <ul class="d-flex justify-content-center align-items-center">
+  <li  (click)="openSidebar($event)" ><img class="icon" src="../../assets/Icon/open-menu-black.svg"></li>
+  <li (click)="openRooms($event);"  ><img class="icon" src="../../assets/Icon/comment.svg"></li>
+  <li (click)="openOnlineUsers($event)"><img class="icon" src="../../assets/Icon/team-black.svg"></li>
+  </ul>
+  </div>
+<div id="chat">
+<div style="width:100%;" class="d-flex justify-content-end">
+<div style="margin-top:-120px;position:fixed; height:100vh; z-index:700" class="d-flex align-items-end">
+<img (click)="chat.scrollTo({bottom:0,duration:0})" [class.active]="downarrow" id="downarrow" src="../../assets/Icon/down_Arrow.svg"></div>
+</div>
+
+<ng-scrollbar    [visibility]="'always'" thumbClass="scrollbar-thumb" trackClass="scrollbar"  id="chat-scrollbar" (downarrowDisable)="downarrow =false;" (downarrowActive)="downarrow= true;" appScrollchat [Height]='scroll'  #chat  >
+<div *ngIf="messages.length > 0" class="msg-container">
+<div [class.connectedmsg]="message.connectedMsg" class="message"  *ngFor="let message of messages">
+<b>{{message.username}}</b>
+<div   class="msg" >
+<div class="d-flex flex-column">
+<p>{{message.Messaggio}}<p>
+<div class="d-flex justify-content-end">
+<span class="date">{{message.time}}</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</ng-scrollbar>
+</div>
+<div [class.deactive]="deactiveOnlineUsers" [class.active]="onlineUsersActive" class="onlineusers">
+<app-onlineusers (reconnected)="reconnect = false" [reconnect]="reconnect" [Typingvalue]="typingvalue"  [currentRoom]="room" [closeAll]="closeAll"   (close)="closeOnUsers();"  [active]="onlineUsersActive"></app-onlineusers>
+</div>
+</div>
+<div class="send">
+<input (keydown)="verifyKey($event,msg)" (input)="changeInput($event)" placeholder="Scrivi qualcosa..." #msg type="text" name="" value="">
+<button (click)="sendMessage(msg)" type="button" name="button" [disabled]="empty" ><img src="../../assets/Icon/send.svg"></button>
+</div>
+
+
+
+</div>
+</div>

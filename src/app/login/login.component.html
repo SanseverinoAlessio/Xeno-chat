@@ -1,0 +1,34 @@
+<div class="bg">
+<div  class="container-fluid login-container">
+<div class="d-flex flex-column align-items-center justify-content-center" id="accesso">
+<div id="buttons" style="width:290px; " class="d-flex flex-row  ">
+<a class="signup_button"> Accedi</a>
+<a  routerLink="/registrazione" class="register_button">Registrati</a>
+
+</div>
+<h2><img class="loginicon" src="../../assets/Icon/user.svg">  Accedi</h2>
+<form [formGroup]='loginForm' (ngSubmit)='Accesso()'>
+<div class="inputcontainer">
+<label for="nome">Nome utente</label>
+
+<input  formControlName="nome" type="text" name="nome" value="">
+</div>
+<div class="inputcontainer">
+<label>Password</label>
+<input  formControlName="password" type="password" name="" value="">
+</div>
+<div class= 'd-flex flex-row'>
+<button [disabled]='loginformvalid()' class="confirmbutton" type="submit" name="button">Accedi</button>
+<svg *ngIf="loading" class="loading" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" background: none;  shape-rendering: auto;" width="200px"  viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+  <circle cx="50" cy="50" fill="none" stroke="#5be1cb" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(161.32 50 50)">
+    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.7633587786259541s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+  </circle>
+</svg>
+
+
+</div>
+<p style="position:relative" class="error">{{loginerror}}</p>
+</form>
+</div>
+</div>
+</div>

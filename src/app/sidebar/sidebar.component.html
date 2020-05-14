@@ -1,0 +1,21 @@
+<nav #navbar [class.active]="navActive">
+<div [class.black]="router.url== '/registrazione' && isMobile() || router.url== '/accedi' && isMobile()" (click)='toggleSidebar()' class="hamburgermenu">
+<div [class.active]="isActive"></div>
+<div [class.active]="isActive"></div>
+<div [class.active]="isActive"></div>
+</div>
+<div [class.active]="isActive"  #sidebar class="sidebar">
+<ul>
+<li>
+  <a  routerLink="/home"  routerLinkActive="active" href="#">Home</a>
+</li>
+<li>
+  <a  routerLink="/accedi"  routerLinkActive="active" href="# ">Login</a>
+  </li>
+  <li>
+  <a  routerLink="/registrazione"  routerLinkActive="active" href="# ">Registrazione</a>
+  </li>
+</ul>
+</div>
+</nav>
+<div (click)="closeSidebar()" [class.active]="isActive" class="filter"></div>

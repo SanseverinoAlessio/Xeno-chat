@@ -1,0 +1,34 @@
+<div [class.active]="roomsActive"  class="container-rooms-change">
+<div class="" [class.active]="roomsActive" id="rooms-change">
+<div style="margin-left:20px; margin-bottom:30px" >
+<img [class.active]="roomsActive" (click)="close();" class="closebutton" src="../../assets/Icon/close.svg">
+<h2>Scegli una stanza</h2>
+<p>Puoi entrare in una stanza già presente, oppure crearne una.</p>
+</div>
+<hr style="width:100%; background-color:#276492; height:1.3px">
+<div style="margin-top:-16px;height:200px">
+<ng-scrollbar style="padding:0px !Important; margin:0px !important" class="room-scrollbar" [visibility]="'always'" >
+<table>
+<tr>
+<th style="padding-left:20px">Nome</th>
+<th style="padding-left:7px">Utenti</th>
+</tr>
+<tr style="height:60px" [class.active]="rooms[i].nome == current" class="room-row" *ngFor="let room of rooms; let i= index;" [attr.data.roomid]="i" >
+
+<td  style="word-break:break-all;padding-left:20px " >{{room.nome}}</td>
+<td style="padding-left:7px"><img class="userIcon" src="../../assets/Icon/user.svg"> <p class="roomname" style="display:inline;margin-left:8px">{{room.online}}</p></td>
+<td>
+<a *ngIf="rooms[i].nome !== current" (click)="enterInRoom(i);" class="enter-button">Entra</a>
+</td>
+</tr>
+</table>
+</ng-scrollbar>
+</div>
+<hr style="width:100%; background-color:#276492; height:1.3px; margin-top:0px">
+<div style="margin-left:20px">
+<input (keydown)="verifyKey($event,inputroom)" #inputroom (input)="setButton($event);" placeholder="Digita il nome della stanza che vuoi creare" id="room-input" type="text">
+<button (click)="createRoom(inputroom)" [disabled]="buttondisabled" class="create-button"><img [class.active]="!buttondisabled" src="../../assets/Icon/send.svg"></button>
+<p class="error">{{errormsg}}</p>
+</div>
+</div>
+</div>

@@ -1,0 +1,76 @@
+<div class="bg">
+
+<div  class="container-fluid login-container">
+
+<div id="accesso">
+<ng-scrollbar #scrollbar class="scrollbar"  style="width:100%">
+<div  class="d-flex flex-column align-items-center justify-content-center">
+<div  id="buttons" style="width:290px; " class="d-flex flex-row  ">
+<a routerLink="/accedi" class="signup_button"> Accedi</a>
+<a class="register_button">Registrati</a>
+
+</div>
+<h2><img class="loginicon" src="../../assets/Icon/user.svg"> Registrati</h2>
+<form  [formGroup]='registerForm' (ngSubmit)="Register()">
+
+<div  class="inputcontainer">
+<label for="">Nome utente <span class="red">*</span></label>
+<input type="text" name="" formControlName="nome">
+<img *ngIf="registerForm.controls['nome'].errors && registerForm.controls['nome'].dirty" class="errors" src="../../assets/Icon/Error.svg">
+<img *ngIf="!registerForm.controls['nome'].errors" class="confirm" src="../../assets/Icon/confirm.svg">
+<p *ngIf="registerForm.controls.nome.errors && registerForm.controls.nome.errors.unique"  class="error">Nome già utilizzato</p>
+</div>
+<div class="inputcontainer">
+<label for=""  >Email <span class="red">*</span></label>
+<input  type="text" name="" value="" formControlName="email">
+<img *ngIf="registerForm.controls.email.errors && registerForm.controls.email.dirty" class="errors" src="../../assets/Icon/Error.svg">
+<img *ngIf="!registerForm.controls.email.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+<p *ngIf="registerForm.controls.email.errors &&  registerForm.controls.email.errors.unique" class="error">Email già esistente</p>
+</div>
+
+<div  class="inputcontainer">
+<label for="">Password <span class="red">*</span></label>
+<input type="password" name="" value="" formControlName="password">
+<img *ngIf="registerForm.controls.password.errors && registerForm.controls.password.dirty" class="errors" src="../../assets/Icon/Error.svg">
+<img *ngIf="!registerForm.controls.password.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+</div>
+<div  class="inputcontainer">
+<label for="">Ripeti la Password <span class="red">*</span></label>
+<input type="password" name="" value="" formControlName="repeat_password">
+<img *ngIf="registerForm.controls.repeat_password.errors && registerForm.controls.repeat_password.dirty" class="errors" src="../../assets/Icon/Error.svg">
+<img *ngIf="!registerForm.controls.repeat_password.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+
+</div>
+<p style="position:relative">La password deve contenere una lettera maiuscola e almeno due numeri</p>
+
+
+<div>
+
+<button [disabled]="registerformvalid()"  type="submit" class="confirmbutton">Conferma Registrazione</button>
+<svg *ngIf="loading" class="loading" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style=" background: none;  shape-rendering: auto;" width="200px"  viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+  <circle cx="50" cy="50" fill="none" stroke="#5be1cb" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" transform="rotate(161.32 50 50)">
+    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="0.7633587786259541s" values="0 50 50;360 50 50" keyTimes="0;1"></animateTransform>
+  </circle>
+</svg>
+<svg class="confirmRegister" *ngIf="completed" xmlns="http://www.w3.org/2000/svg" width="20.922" height="14.075"><g data-name="Group 805"><path data-name="Path 366" d="M20.588 1.019L19.9.334a1.147 1.147 0 00-1.618 0l-9.63 9.63-6.014-6.017a1.147 1.147 0 00-1.618 0l-.686.685a1.148 1.148 0 000 1.619l6.793 6.793a.258.258 0 00.03.036l.686.674a1.13 1.13 0 00.812.322 1.127 1.127 0
+00.809-.322l.686-.68a.173.173 0 00.026-.029l10.41-10.409a1.143 1.143 0 00.002-1.617z"
+fill="#36be1a"/></g></svg>
+
+
+<p>
+{{message}}
+</p>
+
+
+
+</div>
+
+<div>
+</div>
+</form>
+</div>
+</ng-scrollbar>
+
+</div>
+</div>
+</div>

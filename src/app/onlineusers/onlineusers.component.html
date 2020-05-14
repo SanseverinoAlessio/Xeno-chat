@@ -1,0 +1,13 @@
+<div class="online">
+<img [class.anim]="active"  (click)="closeSidebar()" id="close" src="../../assets/Icon/close.svg">
+
+<div class="list">
+<h2> <img src="../../assets/Icon/team.svg">Online</h2>
+<ul class="users">
+<li  *ngFor='let user of onlineusers '>
+<img src="../../assets/Icon/online.svg">  {{user.username}}
+<p class="typing" *ngIf="user.typing"><img style="width:20px; height:20px; margin-top:-5px; margin-left:3px" src="../../assets/Icon/message.svg"></p>
+</li>
+</ul>
+</div>
+</div>

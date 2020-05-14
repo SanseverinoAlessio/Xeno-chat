@@ -1,0 +1,8 @@
+<div [class.deactive]='deactive' [class.active]='sidebarStatus' class="sidebar">
+<img [class.anim]="sidebarStatus" (click)="close()" id="close" src="../../assets/Icon/close.svg">
+<ul class="d-flex flex-column">
+<li><h3 id="greeting">Ciao {{name}}!</h3> </li>
+<li  style="margin-top:50px"><a  routerLink="/chat"  routerLinkActive="active"><img src="../../assets/Icon/message.svg"></a></li>
+<li style=" margin-top:0px"><a routerLink="/logout"   ><img src="../../assets/Icon/logout.svg"></a></li>
+</ul>
+</div>

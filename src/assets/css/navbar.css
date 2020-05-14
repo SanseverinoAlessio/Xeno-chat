@@ -1,0 +1,50 @@
+#navbar{transition: 0.5s;z-index: 999; min-height: 90px}
+.navbar-brand{color: white !Important; font-weight: 700; font-size: 2rem; transition: 0.7s;}
+.navbar{ ;background: transparent !Important;width: 100%; z-index: 999; position: fixed;}
+.navbar.active{background-color:#EEEEEE !important;box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+ z-index: 999 !important}
+
+#navbar .hamburgermenu{margin-top: 20px}
+#navbar .line{transition:0.8s;background-color: white; height: 5px; width:50px;margin-bottom: 10px; margin-top: 10px; border-radius: 10px}
+#navbar.active .line{background-color: black;}
+#navbar .line:last-of-type.hide{opacity: 0}
+#navbar .line:first-of-type.anim{transform: rotate(50deg); margin-bottom: 4px}
+#navbar .hamburgermenu #second.anim{transform: rotate(130deg); margin-top: -10px}
+ #navbar.active .nav-link{transition: 0.7s;}
+ #navbar.active .navbar-brand{color: black !Important; font-size: 1.6rem}
+#navbar.active .nav-link:hover{color: #F6842F !important;text-decoration:line-through;}
+#navbar.active .nav-link.active{color: #F6842F !important;text-decoration:line-through;}
+#navbar .sidebar{width: 100%; display: flex; flex-direction: row;}
+#navbar .nav-link{color: white !Important; font-weight: 700; transition: 0.7s; margin-top: 10px}
+#navbar .nav-link.active{color: #F6842F !important; background-color: transparent !important; text-decoration:line-through;}
+#navbar .nav-link:hover{color: #F6842F !important;text-decoration:line-through;}
+#navbar.active  .nav-link{color: black !important;}
+.hamburgermenu{display: none}
+.navbar{justify-content: flex-start!Important;}
+.nav-pills{width: 72%; margin-left: auto;}
+
+@media only screen and (max-width: 768px){
+
+
+
+
+  .removesidebar{display: none;margin-left: -30px;width: 130%; height: 100%; position: fixed;background-color: black; top: 0; opacity: 0; z-index: -99; }
+  #navbar.active .removesidebar{margin-top: 90px}
+  .removesidebar.active{opacity: 0.5; z-index: -1; display: block;}
+#navbar{z-index: 999 !important}
+.hamburgermenu{display: block; width: 50px; height: 50px; cursor: pointer;}
+.navbar-brand{font-size: 1.4rem; padding-top: 100px; text-align: left;padding-left: 15px}
+#navbar.active .navbar-brand{font-size: 1.4rem !important;}
+
+.nav{display: block;}
+#navbar .nav-link{text-align: left;}
+#navbar .nav-pills{margin-top:20px; width: 100%;}
+#navbar .sidebar{ flex-direction: column;display: flex;z-index: -1;margin-left: -400px;width: 270px;
+  background: linear-gradient(135deg, rgba(68,170,159,1) 1%, rgba(14,119,107,1) 100%);  position:fixed; height: 100%;margin-top: 0px; top:0;box-shadow: 6px 1px 5px -5px rgba(0,0,0,0.75);}
+#navbar.active .sidebar{margin-top: 93px;}
+.sidebar.active{margin-left: -20px !Important;}
+#navbar.active .nav-link{transition: 0.7s; color: white !Important}
+#navbar.active .navbar-brand{color: white !Important; font-size: 1.6rem}
+#navbar.active .nav-link:hover{color: #F6842F !important;text-decoration:line-through;}
+
+}

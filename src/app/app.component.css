@@ -1,0 +1,2 @@
+#app-container{transition: linear 0.18s; height: 100%}
+#app-container.move{transform: translate(300px,0px)}

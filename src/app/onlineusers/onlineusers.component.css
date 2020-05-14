@@ -1,0 +1,22 @@
+.online{background-color: #144A73; height: 100%;  margin-left: -15px;}
+.users{padding-top: 10px; padding-left: 15%; }
+.users li{color: white; font-size: 1rem; list-style: none}
+h2{padding-left: 15%; color: white; font-weight: 700;padding-top: 100px; font-size: 1.8rem}
+h2 img{width: 30px; height: 30px; margin-right: 6px; margin-top: -6px}
+li img{margin-left: -6px}
+#close.anim{animation-name: closebutton; animation-duration: 0.8s; animation-fill-mode: forwards;animation-delay: 0.3s}
+#close{cursor: pointer;;display: none}
+.typing{margin-left: 6px; margin-top:-5px; display: inline;}
+@media only screen and (max-width: 800px) {
+.online{border: none !important;}
+.online.active{}
+#close{display: block; width: 30px; height: 30px; margin-left: 10px;margin-top: 10px; position: absolute;}
+}
+
+@keyframes closebutton {
+0%{transform: scaleX(1,1);opacity: 0}
+30%{transform: scale(2,1);}
+50%{transform: scale(0.6,0.6);}
+80%{transform: scale(1.4,1.4);}
+100%{transform: scale(1,1);opacity: 1}
+}
