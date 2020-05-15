@@ -16,6 +16,8 @@
 <div class="inputcontainer">
 <label>Password</label>
 <input  formControlName="password" type="password" name="" value="">
+<img (click)="passwordReveal($event)" class="password-reveal" src="../../assets/Icon/Password-reveal-off.svg">
+
 </div>
 <div class= 'd-flex flex-row'>
 <button [disabled]='loginformvalid()' class="confirmbutton" type="submit" name="button">Accedi</button>

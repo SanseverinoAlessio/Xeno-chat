@@ -27,7 +27,7 @@ resolve('Account creato!');
 return prom;
 }
 static findName(nome){
-return user.findOne({nome:nome}).select('nome');
+return user.findOne({nome:new RegExp("^" + nome +  "$" ,"i")}).select('nome');
 }
 static findEmail(email){
 return user.find({email:email},"",(err,doc)=>{
@@ -43,7 +43,13 @@ else{
 if(doc){
 let value = doc.toObject();
 passwordhash.comparePassword(password,value.password).then((val) => {
-resolve(val);
+
+let obj = {
+condition: val,
+user: value
+}
+
+resolve(obj);
 }).catch((err) => {
 reject("C'è stato un errore");
 })

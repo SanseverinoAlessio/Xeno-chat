@@ -72,4 +72,26 @@ this.inputsAnim.init();
     return false;
     }
   }
+
+  passwordReveal(e) {
+  console.log('prova');
+  let passicon = e.target;
+  let input = passicon.previousElementSibling;
+  if(input.type == "password"){
+  console.log('cambio');
+  console.log(e.target.src);
+  e.target.src= e.target.src.replace('Password-reveal-off','Password-reveal-on');
+
+  input.type = "text";
+  }
+  else{
+  input.type = "password";
+  e.target.src= e.target.src.replace('Password-reveal-on','Password-reveal-off');
+  }
+  input.focus();
+
+  }
+
+
+
 }

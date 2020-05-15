@@ -2,6 +2,7 @@ function server(port){
 this.port = process.env.PORT || port;
 const express = require('express');
 const app = express();
+const validate = require("./validate.js");
 const http = require('http').createServer(app);
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: true })
@@ -16,7 +17,6 @@ const chatservice = new chat(http);
 const {resolve} = require('path');
 const path = require('path');
 const secure = require('express-force-https');
-
 this.Start = ()=>{
 chatservice.setDefaultRoom('generale');
 chatservice.init();
@@ -67,6 +67,17 @@ app.post('/register',urlencodedParser,(req,res)=>{
 let nome = req.body.nome;
 let email = req.body.email;
 let pass = new passwordhash(10);
+let errors = [];
+validate.name(nome,errors,()=>{
+validate.email(email,errors,()=>{
+validate.password(req.body.password,errors);
+console.log(errors);
+console.log(errors.length);
+
+
+if(errors.length == 0)
+{
+console.log('password: ' + req.body.password);
 pass.hashPassword(req.body.password).then((password) => {
 let user = new users(nome,email,password);
 user.adduser().then((resol) => {
@@ -89,6 +100,16 @@ res.status(500).json({
 console.log(err);
 res.end('');
 })
+
+}
+else{
+console.log('errore con la registrazione');
+let jsonErrors = JSON.stringify(errors);
+res.json(jsonErrors);
+res.end('');
+}
+});
+});
 });
 app.get('/user/:username',urlencodedParser,(req,res)=>{
 users.findName(req.params.username).then((val) => {
@@ -142,10 +163,11 @@ res.status(200).end('');
 
 app.post('/login',urlencodedParser,(req,res)=>{
 users.login(req.body.nome,req.body.password).then((val) => {
-console.log(req.body.nome + " ha effettuato l'accesso");
-if(val == true){
+console.log(val.condition);
+console.log(val.user.nome);
+if(val.condition == true){
 jwt.sign({ //Crea un Json Web Token
-User:req.body.nome,
+User:val.user.nome,
 },
 process.env.token_Key, //Token Key
 {algorithm: 'HS256'},
@@ -179,7 +201,6 @@ error: err
 res.end('');
 });
 });
-
 app.get('*', (req,res)=>{
 if(process.env.Mode == 'production'){
   res.sendFile(path.join(__dirname, '../../dist/chat/index.html'));

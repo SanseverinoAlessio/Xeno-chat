@@ -39,6 +39,11 @@ repeat_password: ['',{
 validators: [Validators.required,password_repeat]
 }],
 });
+
+
+
+
+
 }
 Register(){
 if(this.registerForm.valid){
@@ -94,6 +99,9 @@ window.addEventListener('resize',()=>{
 let width = window.innerWidth;
 this.hideOrShowScrollbar(width);
 });
+
+
+
 }
 hideOrShowScrollbar(width){
 if(width > 450){
@@ -102,5 +110,26 @@ this.scrollbar.track = 'vertical';
 else{
 this.scrollbar.track= '';
 }
+}
+passwordReveal(e) {
+console.log('prova');
+console.log(e.target.parentNode.previousElementSibling.type);
+let passicon = e.target;
+let input = passicon.parentNode.previousElementSibling;
+if(input.type == "password"){
+console.log('cambio');
+console.log(e.target.src);
+e.target.src= e.target.src.replace('Password-reveal-off','Password-reveal-on');
+
+input.type = "text";
+}
+else{
+input.type = "password";
+e.target.src= e.target.src.replace('Password-reveal-on','Password-reveal-off');
+}
+input.focus();
+
+
+
 }
 }

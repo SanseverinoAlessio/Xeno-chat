@@ -2,7 +2,7 @@
 
 <div  class="container-fluid login-container">
 
-<div id="accesso">
+<div id="registrazione">
 <ng-scrollbar #scrollbar class="scrollbar"  style="width:100%">
 <div  class="d-flex flex-column align-items-center justify-content-center">
 <div  id="buttons" style="width:290px; " class="d-flex flex-row  ">
@@ -16,29 +16,39 @@
 <div  class="inputcontainer">
 <label for="">Nome utente <span class="red">*</span></label>
 <input type="text" name="" formControlName="nome">
-<img *ngIf="registerForm.controls['nome'].errors && registerForm.controls['nome'].dirty" class="errors" src="../../assets/Icon/Error.svg">
+<div  class="d-flex icon-container otherInput">
+<img  *ngIf="registerForm.controls['nome'].errors && registerForm.controls['nome'].dirty" class="errors" src="../../assets/Icon/Error.svg">
 <img *ngIf="!registerForm.controls['nome'].errors" class="confirm" src="../../assets/Icon/confirm.svg">
+</div>
 <p *ngIf="registerForm.controls.nome.errors && registerForm.controls.nome.errors.unique"  class="error">Nome già utilizzato</p>
 </div>
 <div class="inputcontainer">
 <label for=""  >Email <span class="red">*</span></label>
 <input  type="text" name="" value="" formControlName="email">
+<div  class="d-flex icon-container otherInput">
 <img *ngIf="registerForm.controls.email.errors && registerForm.controls.email.dirty" class="errors" src="../../assets/Icon/Error.svg">
 <img *ngIf="!registerForm.controls.email.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+</div>
 <p *ngIf="registerForm.controls.email.errors &&  registerForm.controls.email.errors.unique" class="error">Email già esistente</p>
 </div>
 
 <div  class="inputcontainer">
 <label for="">Password <span class="red">*</span></label>
 <input type="password" name="" value="" formControlName="password">
+<div  class="d-flex icon-container">
+<img (click)="passwordReveal($event)" class="password-reveal" src="../../assets/Icon/Password-reveal-off.svg">
 <img *ngIf="registerForm.controls.password.errors && registerForm.controls.password.dirty" class="errors" src="../../assets/Icon/Error.svg">
 <img *ngIf="!registerForm.controls.password.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+</div>
 </div>
 <div  class="inputcontainer">
 <label for="">Ripeti la Password <span class="red">*</span></label>
 <input type="password" name="" value="" formControlName="repeat_password">
+<div  class="d-flex icon-container">
+<img (click)="passwordReveal($event)" class="password-reveal" src="../../assets/Icon/Password-reveal-off.svg">
 <img *ngIf="registerForm.controls.repeat_password.errors && registerForm.controls.repeat_password.dirty" class="errors" src="../../assets/Icon/Error.svg">
 <img *ngIf="!registerForm.controls.repeat_password.errors" class="confirm" src="../../assets/Icon/confirm.svg">
+</div>
 
 </div>
 <p style="position:relative">La password deve contenere una lettera maiuscola e almeno due numeri</p>

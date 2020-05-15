@@ -1,15 +1,18 @@
 @import '../../assets/inputAnim/inputanimation.css';
 .inputcontainer{margin-bottom:20px; position: relative;}
+.icon-container{position:absolute !important; margin-top:-40px !important; margin-left:265px}
 
 .bg{width: 100%;min-height:100vh;background: linear-gradient(27deg, rgba(37,96,141,1) 0%, rgba(20,74,115,1) 100%);}
-#accesso{ background-color: #F3F3F3; width: 500px;height: 550px;
+#registrazione{ background-color: #F3F3F3; width: 500px;height: 550px;
   border-radius: 15px;box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.75);
  background-color: #DADADA solid 1px; margin-top: 100px; overflow: auto;
 }
+
+
 .scrollbar{height: inherit;}
-#accesso h2{margin-top: 30px;width:290px; color:#144A73; font-weight: 700;margin-bottom: 20px}
-#accesso p{width: 250px; position: absolute;}
-#accesso input{padding-top: 15px;box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.75);
+#registrazione h2{margin-top: 30px;width:290px; color:#144A73; font-weight: 700;margin-bottom: 20px}
+#registrazione p{width: 250px; position: absolute;}
+#registrazione input{padding-top: 15px;box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.75);
  ;border:none;border-radius: 10px;
 font-size: 1rem;width: 300px;height: 45px;
 border: 1px solid #DDDDDD; outline: none; padding-right:10; padding-left: 10px; padding-bottom: 0px}
@@ -30,26 +33,38 @@ font-weight: 700;color: black; cursor: pointer;
   padding-right: 30px; background-color: #25608D; border-radius: 9px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);
 }
 .confirmRegister{margin-left: 15px;animation-name: confirmRegisterAnimation; animation-fill-mode: forwards; animation-duration: 1.5s}
-
-
 .register_button:hover{background-color:#25608D; color: white}
 .loading{width: 40px; margin: 0px!important;margin-left: 20px !important}
 #buttons{margin-bottom: 10px; margin-top: 30px}
 .error{position: relative !important;margin-top: 9px !important;color: #C02222; margin-bottom: 0px}
 .login-container{display: flex; justify-content: center;min-height:700px;}
-.errors{;margin-left: -30px; margin-top:-10px;z-index: 5; position: relative;cursor: pointer;}
-.confirm{margin-left: -30px; margin-top:-10px;z-index: 5; position: relative;cursor: pointer;}
+.password-reveal{position: relative;;width: 25px; height: 25px; margin-top: 6px; cursor:pointer;  }
+.errors{margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer;}
+.confirm{ margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer; width: 25px; height: 20px}
 .error_div{width: 300px; min-height:80px; background-color: white; border-radius: 9px;position: absolute;margin-left: 80px; margin-top: -20px;z-index: 300}
+.otherInput .errors{margin-left: 44px; margin-top: 7px}
+.otherInput .confirm{margin-left: 44px; margin-top: 7px}
 
 @media only screen and (max-width: 450px) {
   ::ng-deep .scrollbar .scrollbar-control{display: none}
-#accesso{width: 100%; border-radius: 0px;height:760px; margin-top: 0px;z-index: 999; overflow: hidden;}
+#registrazione{width: 100%; border-radius: 0px;height:760px; margin-top: 0px;z-index: 999; overflow: hidden;}
 .login-container{ display: block !important;width: 100%;padding: 0px; min-height:760px !important}
 .bg{background:transparent; height: 100%; min-height: 0px !important;}
 
 .hamburgermenu div{background-color: black !important }
 #buttons{margin-top: 110px !important}
 }
+
+@media only screen and (max-width: 350px){
+  #registrazione input{width: 260px !important;}
+  .icon-container{position:absolute; margin-top:-40px; margin-left:220px}
+  #registrazione h2{margin-left: 28px}
+.signup_button{margin-left: 16px}
+.errors{width: 20px; height: 20px; margin-top: 8px}
+.confirm{width: 20px; height: 15px; margin-top: 8px}
+
+}
+
 
 @keyframes confirmRegisterAnimation {
 0%{opacity: 0;}
