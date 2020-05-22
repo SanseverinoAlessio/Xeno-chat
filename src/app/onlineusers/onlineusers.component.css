@@ -8,15 +8,15 @@ li img{margin-left: -6px}
 #close{cursor: pointer;;display: none}
 .typing{margin-left: 6px; margin-top:-5px; display: inline;}
 @media only screen and (max-width: 800px) {
-.online{border: none !important;}
-.online.active{}
-#close{display: block; width: 30px; height: 30px; margin-left: 10px;margin-top: 10px; position: absolute;}
-}
+  .online{border: none !important;}
+  .online.active{}
+    #close{display: block; width: 30px; height: 30px; margin-left: 10px;margin-top: 10px; position: absolute;}
+  }
 
-@keyframes closebutton {
-0%{transform: scaleX(1,1);opacity: 0}
-30%{transform: scale(2,1);}
-50%{transform: scale(0.6,0.6);}
-80%{transform: scale(1.4,1.4);}
-100%{transform: scale(1,1);opacity: 1}
-}
+  @keyframes closebutton {
+    0%{transform: scaleX(1,1);opacity: 0}
+    30%{transform: scale(2,1);}
+    50%{transform: scale(0.6,0.6);}
+    80%{transform: scale(1.4,1.4);}
+    100%{transform: scale(1,1);opacity: 1}
+  }

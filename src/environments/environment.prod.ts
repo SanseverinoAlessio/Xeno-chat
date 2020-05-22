@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverIp: 'https://xeno-chat.herokuapp.com'
+  serverIp: 'http://localhost:3000'
 };

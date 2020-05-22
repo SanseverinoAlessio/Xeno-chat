@@ -5,7 +5,7 @@
 .bg{width: 100%;min-height:100vh;background: linear-gradient(27deg, rgba(37,96,141,1) 0%, rgba(20,74,115,1) 100%);}
 #registrazione{ background-color: #F3F3F3; width: 500px;height: 550px;
   border-radius: 15px;box-shadow: 0px 2px 8px -2px rgba(0,0,0,0.75);
- background-color: #DADADA solid 1px; margin-top: 100px; overflow: auto;
+  background-color: #DADADA solid 1px; margin-top: 100px; overflow: auto;
 }
 
 
@@ -13,61 +13,61 @@
 #registrazione h2{margin-top: 30px;width:290px; color:#144A73; font-weight: 700;margin-bottom: 20px}
 #registrazione p{width: 250px; position: absolute;}
 #registrazione input{padding-top: 15px;box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.75);
- ;border:none;border-radius: 10px;
-font-size: 1rem;width: 300px;height: 45px;
-border: 1px solid #DDDDDD; outline: none; padding-right:10; padding-left: 10px; padding-bottom: 0px}
-.signup_button{transition: 0.6s;text-decoration: none;text-align: center;padding-bottom: 10px; padding-top:10px;
-padding-left: 30px; padding-right: 30px;background-color: white;
-border-radius: 9px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);
-font-weight: 700;color: black; cursor: pointer;
-}
-.signup_button:hover{background-color:#25608D; color: white}
-.loginicon{width: 23px; margin-top: -8px;}
-.confirmbutton{margin-bottom: 20px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);height: 45px !Important;cursor: pointer;transition: 0.6s;display: inline; border: none;  border-radius: 8px;font-weight: 700;border: black 2px solid; text-align: center;;padding:8px 55px 8px 50px; background: transparent; color: black}
-.confirmbutton:hover{background-color: black; color: white}
-.confirmbutton:disabled{cursor:default;border:#4D4B4B solid 2px; color: #4D4B4B; box-shadow: none; opacity: 0.7}
-.confirmbutton:disabled:hover{background:transparent; color: #4D4B4B}
-.red{color: #C02222}
+  ;border:none;border-radius: 10px;
+  font-size: 1rem;width: 300px;height: 45px;
+  border: 1px solid #DDDDDD; outline: none; padding-right:10; padding-left: 10px; padding-bottom: 0px}
+  .signup_button{transition: 0.6s;text-decoration: none;text-align: center;padding-bottom: 10px; padding-top:10px;
+    padding-left: 30px; padding-right: 30px;background-color: white;
+    border-radius: 9px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);
+    font-weight: 700;color: black; cursor: pointer;
+  }
+  .signup_button:hover{background-color:#25608D; color: white}
+  .loginicon{width: 23px; margin-top: -8px;}
+  .confirmbutton{margin-bottom: 20px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);height: 45px !Important;cursor: pointer;transition: 0.6s;display: inline; border: none;  border-radius: 8px;font-weight: 700;border: black 2px solid; text-align: center;;padding:8px 55px 8px 50px; background: transparent; color: black}
+  .confirmbutton:hover{background-color: black; color: white}
+  .confirmbutton:disabled{cursor:default;border:#4D4B4B solid 2px; color: #4D4B4B; box-shadow: none; opacity: 0.7}
+  .confirmbutton:disabled:hover{background:transparent; color: #4D4B4B}
+  .red{color: #C02222}
 
-.register_button{cursor: pointer;text-decoration: none;color: white;transition: 0.5s;font-weight: 700;text-align: center;margin-left: 10px;padding-bottom: 10px; padding-top:10px;padding-left: 30px;
-  padding-right: 30px; background-color: #25608D; border-radius: 9px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);
-}
-.confirmRegister{margin-left: 15px;animation-name: confirmRegisterAnimation; animation-fill-mode: forwards; animation-duration: 1.5s}
-.register_button:hover{background-color:#25608D; color: white}
-.loading{width: 40px; margin: 0px!important;margin-left: 20px !important}
-#buttons{margin-bottom: 10px; margin-top: 30px}
-.error{position: relative !important;margin-top: 9px !important;color: #C02222; margin-bottom: 0px}
-.login-container{display: flex; justify-content: center;min-height:700px;}
-.password-reveal{position: relative;;width: 25px; height: 25px; margin-top: 6px; cursor:pointer;  }
-.errors{margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer;}
-.confirm{ margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer; width: 25px; height: 20px}
-.error_div{width: 300px; min-height:80px; background-color: white; border-radius: 9px;position: absolute;margin-left: 80px; margin-top: -20px;z-index: 300}
-.otherInput .errors{margin-left: 44px; margin-top: 7px}
-.otherInput .confirm{margin-left: 44px; margin-top: 7px}
+  .register_button{cursor: pointer;text-decoration: none;color: white;transition: 0.5s;font-weight: 700;text-align: center;margin-left: 10px;padding-bottom: 10px; padding-top:10px;padding-left: 30px;
+    padding-right: 30px; background-color: #25608D; border-radius: 9px;box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.75);
+  }
+  .confirmRegister{margin-left: 15px;animation-name: confirmRegisterAnimation; animation-fill-mode: forwards; animation-duration: 1.5s}
+  .register_button:hover{background-color:#25608D; color: white}
+  .loading{width: 40px; margin: 0px!important;margin-left: 20px !important}
+  #buttons{margin-bottom: 10px; margin-top: 30px}
+  .error{position: relative !important;margin-top: 9px !important;color: #C02222; margin-bottom: 0px}
+  .login-container{display: flex; justify-content: center;min-height:700px;}
+  .password-reveal{position: relative;;width: 25px; height: 25px; margin-top: 6px; cursor:pointer;  }
+  .errors{margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer;}
+  .confirm{ margin-left: 20px; margin-top:3px;z-index: 5; position: relative;cursor: pointer; width: 25px; height: 20px}
+  .error_div{width: 300px; min-height:80px; background-color: white; border-radius: 9px;position: absolute;margin-left: 80px; margin-top: -20px;z-index: 300}
+  .otherInput .errors{margin-left: 44px; margin-top: 7px}
+  .otherInput .confirm{margin-left: 44px; margin-top: 7px}
 
-@media only screen and (max-width: 450px) {
-  ::ng-deep .scrollbar .scrollbar-control{display: none}
-#registrazione{width: 100%; border-radius: 0px;height:760px; margin-top: 0px;z-index: 999; overflow: hidden;}
-.login-container{ display: block !important;width: 100%;padding: 0px; min-height:760px !important}
-.bg{background:transparent; height: 100%; min-height: 0px !important;}
+  @media only screen and (max-width: 450px) {
+    ::ng-deep .scrollbar .scrollbar-control{display: none}
+    #registrazione{width: 100%; border-radius: 0px;height:760px; margin-top: 0px;z-index: 999; overflow: hidden;}
+    .login-container{ display: block !important;width: 100%;padding: 0px; min-height:760px !important}
+    .bg{background:transparent; height: 100%; min-height: 0px !important;}
 
-.hamburgermenu div{background-color: black !important }
-#buttons{margin-top: 110px !important}
-}
+    .hamburgermenu div{background-color: black !important }
+    #buttons{margin-top: 110px !important}
+  }
 
-@media only screen and (max-width: 350px){
-  #registrazione input{width: 260px !important;}
-  .icon-container{position:absolute; margin-top:-40px; margin-left:220px}
-  #registrazione h2{margin-left: 28px}
-.signup_button{margin-left: 16px}
-.errors{width: 20px; height: 20px; margin-top: 8px}
-.confirm{width: 20px; height: 15px; margin-top: 8px}
+  @media only screen and (max-width: 350px){
+    #registrazione input{width: 260px !important;}
+    .icon-container{position:absolute; margin-top:-40px; margin-left:220px}
+    #registrazione h2{margin-left: 28px}
+    .signup_button{margin-left: 16px}
+    .errors{width: 20px; height: 20px; margin-top: 8px}
+    .confirm{width: 20px; height: 15px; margin-top: 8px}
 
-}
+  }
 
 
-@keyframes confirmRegisterAnimation {
-0%{opacity: 0;}
-50%{opacity: 0.6; transform: scale(1.5,1.5);}
-100%{opacity: 1; transform:scale(1,1);}
-}
+  @keyframes confirmRegisterAnimation {
+    0%{opacity: 0;}
+    50%{opacity: 0.6; transform: scale(1.5,1.5);}
+    100%{opacity: 1; transform:scale(1,1);}
+  }

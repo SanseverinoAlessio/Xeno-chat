@@ -2,27 +2,27 @@
 #header-title{color: #FFCA83; font-weight: 700; font-size: 2.5rem}
 #header-paragraph{color: #E4E2E2; font-size: 1.1rem; margin-bottom: 30px}
 #header-button{text-decoration: none;box-shadow: 0px 2px 8px -3px rgba(0,0,0,0.75);width: 200px;display: block;;font-weight: 700;
-cursor: pointer;transition: 0.5s;;color:#FFCA83; font-size: 1.2rem;
-padding: 10px 50px 10px 50px; border: solid 2px #FFCA83; text-align: center;border-radius: 10px; margin-bottom: 30px}
-#header-button:hover{color: black; background-color:#FFCA83; }
-#msgimg{padding-right: 40px; padding-top: 90px; width: 100%}
-#msg-icon{width: 10%; margin-top: -20px; margin-left: 10px}
-#second-area{background-color: #F0F0F0;height: 600px}
-#second-area h2{color: #25608D;font-weight: 700; font-size: 2rem;}
-#second-area p{color: #252525}
-#peopleimg{width: 100%;}
-#second-area .content{padding-left: 30px}
-#header-button.blue{color:#25608D; border: #25608D solid 2px}
-#header-button.blue:hover{background-color:#25608D; color: white;}
+  cursor: pointer;transition: 0.5s;;color:#FFCA83; font-size: 1.2rem;
+  padding: 10px 50px 10px 50px; border: solid 2px #FFCA83; text-align: center;border-radius: 10px; margin-bottom: 30px}
+  #header-button:hover{color: black; background-color:#FFCA83; }
+  #msgimg{padding-right: 40px; padding-top: 90px; width: 100%}
+  #msg-icon{width: 10%; margin-top: -20px; margin-left: 10px}
+  #second-area{background-color: #F0F0F0;height: 600px}
+  #second-area h2{color: #25608D;font-weight: 700; font-size: 2rem;}
+  #second-area p{color: #252525}
+  #peopleimg{width: 100%;}
+  #second-area .content{padding-left: 30px}
+  #header-button.blue{color:#25608D; border: #25608D solid 2px}
+  #header-button.blue:hover{background-color:#25608D; color: white;}
+  
+  @media only screen and (max-width: 768px) {
+    #msgimg{padding-top: 20px}
+    #header-title{padding-top: 20px}
+    #header-title{font-size: 2rem}
+    #second-area .content{padding-left: 0px; padding-top: 30px}
+    #second-area h2{font-size: 1.7rem}
 
-@media only screen and (max-width: 768px) {
-#msgimg{padding-top: 20px}
-#header-title{padding-top: 20px}
-#header-title{font-size: 2rem}
-#second-area .content{padding-left: 0px; padding-top: 30px}
-#second-area h2{font-size: 1.7rem}
+  }
+  @media only screen and (max-width: 450px) {
 
-}
-@media only screen and (max-width: 450px) {
-
-}
+  }

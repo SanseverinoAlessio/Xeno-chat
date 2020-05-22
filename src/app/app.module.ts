@@ -22,13 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReconnectComponent } from './reconnect/reconnect.component';
 
 const appRoutes: Routes = [
-{path:'chat', component: ChatComponent,canActivate:[AuthGuardService], },
-{path:"", redirectTo:'/home', pathMatch:'full'},
-{path:"accedi", component:LoginComponent, canActivate:[AuthLoginService],data: {animation:'accedi'}},
-{path:"registrazione", component:RegisterComponent,canActivate:[AuthLoginService],data: {animation:'registrati'}},
-{path:"home", component:HomeComponent,canActivate:[AuthLoginService],data: {animation:'home'}},
-{path:'logout', component:LogoutComponent,canActivate:[AuthGuardService],data: {animation:'logout'}},
-{path:'**', redirectTo:'/home'},
+  {path:'chat', component: ChatComponent,canActivate:[AuthGuardService], },
+  {path:"", redirectTo:'/home', pathMatch:'full'},
+  {path:"accedi", component:LoginComponent, canActivate:[AuthLoginService],data: {animation:'accedi'}},
+  {path:"registrazione", component:RegisterComponent,canActivate:[AuthLoginService],data: {animation:'registrati'}},
+  {path:"home", component:HomeComponent,canActivate:[AuthLoginService],data: {animation:'home'}},
+  {path:'logout', component:LogoutComponent,canActivate:[AuthGuardService],data: {animation:'logout'}},
+  {path:'**', redirectTo:'/home'},
 
 ];
 @NgModule({
@@ -50,16 +50,16 @@ const appRoutes: Routes = [
   imports: [
 
     BrowserModule,
-       BrowserAnimationsModule,
+    BrowserAnimationsModule,
     NgScrollbarModule,
-ReactiveFormsModule,
-FormsModule,
-RouterModule.forRoot(
-  appRoutes,
-    { enableTracing: true } // <-- debugging purposes only
-  ),
-  BrowserModule,
-  HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+    BrowserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

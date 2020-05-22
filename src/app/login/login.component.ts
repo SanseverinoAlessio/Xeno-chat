@@ -12,83 +12,83 @@ import {inputAnim} from '../../assets/inputAnim/inputAnimation';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-loginForm:FormGroup;
-loginerror:string;
-loading:boolean;
-inputsAnim:any;
+  loginForm:FormGroup;
+  loginerror:string;
+  loading:boolean;
+  inputsAnim:any;
 
-constructor(private fb:FormBuilder, private user:UserService,private router:Router, private elem:ElementRef) {
-this.loginForm = this.fb.group({
-nome:['',{
-validators: [Validators.required,Validators.minLength(3)]
-}],
-password:['',{
-validators:[Validators.required]
-}],
+  constructor(private fb:FormBuilder, private user:UserService,private router:Router, private elem:ElementRef) {
+    this.loginForm = this.fb.group({
+      nome:['',{
+        validators: [Validators.required,Validators.minLength(3)]
+      }],
+      password:['',{
+        validators:[Validators.required]
+      }],
 
-});
+    });
   }
   ngOnInit() {
   }
-ngAfterContentInit(){
-this.inputsAnim = new inputAnim();
-this.inputsAnim.setInputs(this.elem.nativeElement.getElementsByTagName('input'));
-this.inputsAnim.init();
-}
+  ngAfterContentInit(){
+    this.inputsAnim = new inputAnim();
+    this.inputsAnim.setInputs(this.elem.nativeElement.getElementsByTagName('input'));
+    this.inputsAnim.init();
+  }
 
   Accesso(){
-  if(this.loginForm.status == 'VALID'){
-   this.loading = true;
-  this.user.login({
-  nome: this.loginForm.value.nome,
-  password:this.loginForm.value.password
-}).subscribe((e:any)=>{
-  this.setLogin(e);
-  }),err=>{
-    this.loading = false;
-  }
-  }
+    if(this.loginForm.status == 'VALID'){
+      this.loading = true;
+      this.user.login({
+        nome: this.loginForm.value.nome,
+        password:this.loginForm.value.password
+      }).subscribe((e:any)=>{
+        this.setLogin(e);
+      }),err=>{
+        this.loading = false;
+      }
+    }
   }
   setLogin(e){
 
 
-  if(e !== null && e.access == true){
-  this.loading = false;
-  this.loginerror = '';
-  console.log('loggato!');
-  this.loginForm.reset();
-  this.router.navigate(['chat']);
-  }
-  else if(e.access == false || e.error ){
-  this.loading = false;
-  this.loginerror = 'La password o il nome utente non sono corretti';
-  }
+    if(e !== null && e.access == true){
+      this.loading = false;
+      this.loginerror = '';
+      console.log('loggato!');
+      this.loginForm.reset();
+      this.router.navigate(['chat']);
+    }
+    else if(e.access == false || e.error ){
+      this.loading = false;
+      this.loginerror = 'La password o il nome utente non sono corretti';
+    }
   }
   loginformvalid(){
     if(!(this.loginForm.status == 'VALID')){
-    return true;
+      return true;
     }
     else{
-    return false;
+      return false;
     }
   }
 
   passwordReveal(e) {
-  console.log('prova');
-  let passicon = e.target;
-  let input = passicon.previousElementSibling;
-  if(input.type == "password"){
-  console.log('cambio');
-  console.log(e.target.src);
-  e.target.src= e.target.src.replace('Password-reveal-off','Password-reveal-on');
+    console.log('prova');
+    let passicon = e.target;
+    let input = passicon.previousElementSibling;
+    if(input.type == "password"){
+      console.log('cambio');
+      console.log(e.target.src);
+      e.target.src= e.target.src.replace('Password-reveal-off','Password-reveal-on');
 
-  input.type = "text";
-  }
-  else{
-  input.type = "password";
-  e.target.src= e.target.src.replace('Password-reveal-on','Password-reveal-off');
-  }
-  input.focus();
+      input.type = "text";
+    }
+    else{
+      input.type = "password";
+      e.target.src= e.target.src.replace('Password-reveal-on','Password-reveal-off');
+    }
+    input.focus();
 
   }
 

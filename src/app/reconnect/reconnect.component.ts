@@ -5,26 +5,26 @@ import { Component, OnInit,Output,Input,OnChanges,EventEmitter } from '@angular/
   styleUrls: ['./reconnect.component.css']
 })
 export class ReconnectComponent implements OnInit,OnChanges {
-@Input() sameAccount:any;
-@Output() reconnectEv:EventEmitter<any>= new EventEmitter();
-constructor() { }
-ngOnInit(): void {
-}
-ngOnChanges(){
-if(this.sameAccount == true){
-this.open();
-}
-}
-open(){
-}
-reconnect(){
-this.sameAccount = false;
-setTimeout(()=>{
-this.reconnectEv.emit('');
-},0)
+  @Input() sameAccount:any;
+  @Output() reconnectEv:EventEmitter<any>= new EventEmitter();
+  constructor() { }
+  ngOnInit(): void {
+  }
+  ngOnChanges(){
+    if(this.sameAccount == true){
+      this.open();
+    }
+  }
+  open(){
+  }
+  reconnect(){
+    this.sameAccount = false;
+    setTimeout(()=>{
+      this.reconnectEv.emit('');
+    },0)
 
 
-}
+  }
 
 
 

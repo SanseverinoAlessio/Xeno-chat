@@ -1,35 +1,35 @@
 .sidebar{overflow-y: auto;height: 3000px;width: 300px; background-color: #3D7199;
-z-index: 999;
-transition: linear 0.18s;transform: translateX(-300px);}
-.sidebar li{list-style: none}
-.sidebar ul{padding-top: 130px; padding-left: 30px}
-.sidebar a{margin-left: -30px;text-decoration: none;display: block;color: white; font-weight: 700;
-  padding: 10px;background-color: #144A73; transition: 0.6s;
-}
-.sidebar a:hover{ background-color: #FFCA83; color: black}
-.sidebar a.active{ background-color: #FFCA83; color: black}
-.filter{overflow: hidden;opacity: 0; background-color: black; z-index: -1;width: 100%; height:100%;
-position: fixed;transition: 0.6s;}
-.filter.active{z-index: 400;opacity: 0.6; background-color: black; z-index: 400; width: 100%; height: 100%;
-position: fixed;}
-.sidebar.active{transform: translateX(0px);box-shadow: 4px 1px 5px -3px rgba(26,26,26,1);}
-.sidebar.active a{box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);}
-.hamburgermenu{z-index: 999;position: absolute;margin-left: 30px; margin-top: 30px;cursor: pointer;
-}
-.hamburgermenu div{transition: 0.6s;width: 50px; height: 7px; background-color: var(--bg-hamburgermenu,white);margin-bottom: 7px
-;border-radius: 10px}
-.hamburgermenu.black div{background-color: black;}
-.hamburgermenu div.active{background-color: #d40b11 !Important; margin-top: 4px}
-.hamburgermenu div:first-of-type.active{position: absolute;transform: rotate(50deg);}
-.hamburgermenu div:nth-last-of-type(1).active{opacity: 0; background-color: white !important}
-.hamburgermenu div:nth-last-of-type(2).active{transform: rotate(120deg);position: absolute;}
-nav{position: fixed;z-index: 999;  width: 100%; transition: 0.5s; height: 90px;}
-nav.active{;background-color: #f5f5f5;border-bottom:#edebeb 1.5px solid; }
-nav.active .hamburgermenu div{background-color:black;}
+  z-index: 999;
+  transition: linear 0.18s;transform: translateX(-300px);}
+  .sidebar li{list-style: none}
+  .sidebar ul{padding-top: 130px; padding-left: 30px}
+  .sidebar a{margin-left: -30px;text-decoration: none;display: block;color: white; font-weight: 700;
+    padding: 10px;background-color: #144A73; transition: 0.6s;
+  }
+  .sidebar a:hover{ background-color: #FFCA83; color: black}
+  .sidebar a.active{ background-color: #FFCA83; color: black}
+  .filter{overflow: hidden;opacity: 0; background-color: black; z-index: -1;width: 100%; height:100%;
+    position: fixed;transition: 0.6s;}
+    .filter.active{z-index: 400;opacity: 0.6; background-color: black; z-index: 400; width: 100%; height: 100%;
+      position: fixed;}
+      .sidebar.active{transform: translateX(0px);box-shadow: 4px 1px 5px -3px rgba(26,26,26,1);}
+      .sidebar.active a{box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);}
+      .hamburgermenu{z-index: 999;position: absolute;margin-left: 30px; margin-top: 30px;cursor: pointer;
+      }
+      .hamburgermenu div{transition: 0.6s;width: 50px; height: 7px; background-color: var(--bg-hamburgermenu,white);margin-bottom: 7px
+        ;border-radius: 10px}
+        .hamburgermenu.black div{background-color: black;}
+        .hamburgermenu div.active{background-color: #d40b11 !Important; margin-top: 4px}
+        .hamburgermenu div:first-of-type.active{position: absolute;transform: rotate(50deg);}
+        .hamburgermenu div:nth-last-of-type(1).active{opacity: 0; background-color: white !important}
+        .hamburgermenu div:nth-last-of-type(2).active{transform: rotate(120deg);position: absolute;}
+        nav{position: fixed;z-index: 999;  width: 100%; transition: 0.5s; height: 90px;}
+        nav.active{;background-color: #f5f5f5;border-bottom:#edebeb 1.5px solid; }
+        nav.active .hamburgermenu div{background-color:black;}
 
 
-@media only screen and (max-width: 450px) {
-nav{height: 60px;}
-.hamburgermenu{margin-top: 20px}
-.hamburgermenu div{transition: 0.6s;width: 40px; height: 4px; background-color: var(--bg-hamburgermenu,white);margin-bottom: 6px; }
-}
+        @media only screen and (max-width: 450px) {
+          nav{height: 60px;}
+          .hamburgermenu{margin-top: 20px}
+          .hamburgermenu div{transition: 0.6s;width: 40px; height: 4px; background-color: var(--bg-hamburgermenu,white);margin-bottom: 6px; }
+        }

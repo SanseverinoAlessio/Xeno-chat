@@ -1,41 +1,41 @@
 .sidebar{z-index: 999;overflow-y: hidden;;box-sizing:border-box;;width: 160px; background-color: #144A73; height:100vh;}
 .sidebar a{display: block;color: white; padding-left: 50px;transition: 0.8s; cursor: pointer;
-padding-right: 20px; padding-top: 20px; padding-bottom: 20px}
-.sidebar a:last-of-type{}
-.sidebar a img{width: 35px; height: 35px}
-.sidebar ul{height: 100%;}
-.sidebar ul li:last-child{}
-#close{cursor: pointer;;width: 30px; height: 30px; margin-top: 10px; margin-left: 110px; display: none}
-#close.anim{animation-name: closebutton; animation-duration: 0.8s; animation-fill-mode: forwards;animation-delay: 0.3s}
-.sidebar a.active{background-color: #06365B; }
-.sidebar a:hover{background-color: #06365B;}
-.sidebar a:hover img{animation-name: iconAnim; animation-duration: 0.9s; animation-fill-mode: forwards;}
-#greeting{font-weight: 700;color: white; font-size: 1.1rem; margin-top: 40px;  text-align: center;width:150px}
-.hamburgermenu{ cursor: pointer;position: absolute;display: none;margin-top: 20px; margin-left: 20px}
-.hamburgermenu div{;transition: 0.6s;width: 40px; height: 4px; background-color: white;margin-bottom: 7px
-;border-radius: 10px; }
+  padding-right: 20px; padding-top: 20px; padding-bottom: 20px}
+  .sidebar a:last-of-type{}
+    .sidebar a img{width: 35px; height: 35px}
+    .sidebar ul{height: 100%;}
+    .sidebar ul li:last-child{}
+      #close{cursor: pointer;;width: 30px; height: 30px; margin-top: 10px; margin-left: 110px; display: none}
+      #close.anim{animation-name: closebutton; animation-duration: 0.8s; animation-fill-mode: forwards;animation-delay: 0.3s}
+      .sidebar a.active{background-color: #06365B; }
+      .sidebar a:hover{background-color: #06365B;}
+      .sidebar a:hover img{animation-name: iconAnim; animation-duration: 0.9s; animation-fill-mode: forwards;}
+      #greeting{font-weight: 700;color: white; font-size: 1.1rem; margin-top: 40px;  text-align: center;width:150px}
+      .hamburgermenu{ cursor: pointer;position: absolute;display: none;margin-top: 20px; margin-left: 20px}
+      .hamburgermenu div{;transition: 0.6s;width: 40px; height: 4px; background-color: white;margin-bottom: 7px
+        ;border-radius: 10px; }
 
-@keyframes iconAnim {
-0%{transform: translateY(0);}
-40%{transform: scale(0.6,0.6);}
-70%{transform: scale(1.3,1.3);}
-100%{transform: scale(1,1);}
-}
+        @keyframes iconAnim {
+          0%{transform: translateY(0);}
+          40%{transform: scale(0.6,0.6);}
+          70%{transform: scale(1.3,1.3);}
+          100%{transform: scale(1,1);}
+        }
 
 
 
-@keyframes closebutton {
-0%{transform: scaleX(1,1);opacity: 0}
-30%{transform: scale(2,1);}
-50%{transform: scale(0.6,0.6);}
-80%{transform: scale(1.4,1.4);}
-100%{transform: scale(1,1);opacity: 1}
-}
-@media only screen and (max-width: 800px) {
-#close{display: block}
-.sidebar {opacity: 0;width: 160px;z-index:999 !important;margin-left: -200px; position: fixed !important;box-shadow: none}
-.hamburgermenu{z-index: 999 !important}
-.sidebar.active{opacity: 1;transition: 0.7s;;margin-left: 0px !important;}
-.sidebar.deactive{transition: 0.7s }
-.hamburgermenu{display: block;z-index: 999}
-}
+        @keyframes closebutton {
+          0%{transform: scaleX(1,1);opacity: 0}
+          30%{transform: scale(2,1);}
+          50%{transform: scale(0.6,0.6);}
+          80%{transform: scale(1.4,1.4);}
+          100%{transform: scale(1,1);opacity: 1}
+        }
+        @media only screen and (max-width: 800px) {
+          #close{display: block}
+          .sidebar {opacity: 0;width: 160px;z-index:999 !important;margin-left: -200px; position: fixed !important;box-shadow: none}
+          .hamburgermenu{z-index: 999 !important}
+          .sidebar.active{opacity: 1;transition: 0.7s;;margin-left: 0px !important;}
+          .sidebar.deactive{transition: 0.7s }
+          .hamburgermenu{display: block;z-index: 999}
+        }
