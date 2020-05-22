@@ -35,7 +35,7 @@ function server(port){
     console.log('mode: ' + process.env.Mode);
 
     if(process.env.Mode == 'production'){
-      //app.use(secure);
+      app.use(secure);
       console.log('production mode abilitata');
       app.use(express.static(path.join(__dirname, '../../dist/chat')));
       app.use((req,res,next)=>{
