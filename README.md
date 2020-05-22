@@ -17,4 +17,4 @@ Con questo comando, si crea una versione development del server.
 In base alla mode del server, quest'ultimo avvierà il progetto. Se ci si trova in production mode, il server tenterà di accedere alla cartella dist del client, mostrandolo all'utente. Mentre invece, nella development mode, avvierà soltanto il server.
 
 # testServer 
-Serve ad avviare il server del client, così da poter attuare delle modifiche in tempo reale.
+Serve ad avviare il server per il client, così da poter attuare delle modifiche in tempo reale.
