@@ -1,8 +1,8 @@
 # Server
 Il server, per poter essere avviato ha bisogno di un file env, che contenga:
-L'origine da cui accettare le richieste(Origin)
+L'origine da cui accettare le richieste(origin)
 Url del mongodb(mongodb)
-La chiave per creare il jsonToken(token_Key)
+La chiave per creare il jsonToken(Token_key)
 
 # Client
 Sul client, bisogna modificare le variabili env, per poter definire a quale indirizzo inviare le richieste.
