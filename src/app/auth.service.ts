@@ -17,7 +17,7 @@ export class AuthService {
     this.bool = false;
   }
   islogged(){
-    let http = this.http.get(environment.serverIp + '/islogged',this.option).toPromise();
+    let http = this.http.get(environment.serverIp + '/auth/islogged',this.option).toPromise();
     return http;
   }
 }

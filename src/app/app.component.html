@@ -1,6 +1,4 @@
 <app-sidebar (closed)="closesidebar=false;" [closesidebar]="closesidebar" (toggle)='moveContent($event)' *ngIf="router.url !=='/chat'"></app-sidebar>
-
-
-<div  [@routeAnimations]="prepareRouteOutlet(outlet)"  id="app-container">
+ <div  [@routeAnimations]="prepareRouteOutlet(outlet)"  id="app-container">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

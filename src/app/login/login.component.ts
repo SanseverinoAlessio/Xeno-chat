@@ -1,11 +1,9 @@
 import { Component,OnInit, ElementRef,AfterContentInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder,FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import {inputAnim} from '../../assets/inputAnim/inputAnimation';
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,16 +14,15 @@ export class LoginComponent implements OnInit {
   loginerror:string;
   loading:boolean;
   inputsAnim:any;
-
   constructor(private fb:FormBuilder, private user:UserService,private router:Router, private elem:ElementRef) {
-    this.loginForm = this.fb.group({
-      nome:['',{
-        validators: [Validators.required,Validators.minLength(3)]
-      }],
-      password:['',{
-        validators:[Validators.required]
-      }],
-
+    this.loginForm = new FormGroup({
+      nome: new FormControl('',[
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      password: new FormControl('',[
+        Validators.required,
+      ]),
     });
   }
   ngOnInit() {
@@ -35,34 +32,35 @@ export class LoginComponent implements OnInit {
     this.inputsAnim.setInputs(this.elem.nativeElement.getElementsByTagName('input'));
     this.inputsAnim.init();
   }
-
   Accesso(){
     if(this.loginForm.status == 'VALID'){
       this.loading = true;
       this.user.login({
         nome: this.loginForm.value.nome,
         password:this.loginForm.value.password
-      }).subscribe((e:any)=>{
-        this.setLogin(e);
-      }),err=>{
-        this.loading = false;
-      }
+      }).subscribe((res:any)=>{
+        if(res.logged == true){
+          this.setLogin(true);
+        }
+      },(err:any)=>{
+        if(err.status == 401 || err.status == 404){
+          this.setLogin(false);
+        }
+      });
     }
   }
-  setLogin(e){
-
-
-    if(e !== null && e.access == true){
-      this.loading = false;
-      this.loginerror = '';
-      console.log('loggato!');
-      this.loginForm.reset();
-      this.router.navigate(['chat']);
-    }
-    else if(e.access == false || e.error ){
+  setLogin(success = false){
+    if(success == false){
       this.loading = false;
       this.loginerror = 'La password o il nome utente non sono corretti';
+      return;
     }
+    this.loading = false;
+    this.loginerror = '';
+    console.log('loggato!');
+    this.loginForm.reset();
+    this.router.navigate(['chat']);
+    return;
   }
   loginformvalid(){
     if(!(this.loginForm.status == 'VALID')){
@@ -72,16 +70,11 @@ export class LoginComponent implements OnInit {
       return false;
     }
   }
-
   passwordReveal(e) {
-    console.log('prova');
     let passicon = e.target;
     let input = passicon.previousElementSibling;
     if(input.type == "password"){
-      console.log('cambio');
-      console.log(e.target.src);
       e.target.src= e.target.src.replace('Password-reveal-off','Password-reveal-on');
-
       input.type = "text";
     }
     else{
@@ -89,9 +82,5 @@ export class LoginComponent implements OnInit {
       e.target.src= e.target.src.replace('Password-reveal-on','Password-reveal-off');
     }
     input.focus();
-
   }
-
-
-
 }

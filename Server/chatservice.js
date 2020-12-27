@@ -129,25 +129,20 @@ function chat(http){
       }
     }
   }
-
   this.init= ()=>{
     if(defaultRoom.length > 0) {
       io.on('connection',(socket)=>{
+        console.log('connesso');
         let cookies = socket.handshake.headers.cookie;
-        let tokenId = cookie.parse(cookies).sessionId;
+        let tokenId = cookie.parse(cookies).token;
         let socketId = socket.id;
         let reconnected = false;
         let newSocket = '';
-
         let currentRoom = '';
-        jwt.verify(tokenId,process.env.token_Key,(err,decode)=>{
+        jwt.verify(tokenId,process.env.tokenKey || "defaultKey",(err,decode)=>{
           if(err){
-            return null;
-            console.log('errore token');
-
+            return;
           }
-          else{
-            console.log(decode.User);
             if(connection.length !== 0){
               let find = false;
               for(let i =0;i<connection.length; i++){
@@ -184,8 +179,6 @@ function chat(http){
               setTimeout(()=>{
                 this.deleteOtherSession(decode.User,socketId);
               },0);
-
-
             });
             socket.on('room',(room)=>{ //Connessione ad una stanza
               if(rooms.length > 0){
@@ -271,7 +264,7 @@ function chat(http){
                 io.emit('allRooms',{rooms:rooms});
               }
             });
-          }
+
         });
       });
     }

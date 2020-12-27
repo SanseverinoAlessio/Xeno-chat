@@ -67,12 +67,7 @@ export class RoomsComponent implements OnInit,OnChanges {
     this.chatservice.getRooms().subscribe((e:any)=>{
       this.rooms = e.rooms;
     });
-
-
-
   }
-
-
   verifyKey(e,input){
     if(e.keyCode == 13){
       this.createRoom(input);

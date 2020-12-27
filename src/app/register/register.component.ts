@@ -1,9 +1,9 @@
 import { Component,OnInit, ElementRef,AfterContentInit,OnChanges,ViewChild} from '@angular/core';
-import { FormGroup, FormBuilder, AbstractControl} from '@angular/forms';
+import { FormGroup, FormBuilder, AbstractControl,FormControl} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { UserService } from '../user.service';
-import {UniqueName} from "../unique-name";
-import {EmailConvalidator} from "../email-convalidator";
+import {uniqueName} from "../unique-name";
+import {uniqueEmail} from "../uniqueEmail";
 import {PasswordRepeat} from "../password-repeat";
 import { Router } from '@angular/router';
 import {AuthService} from '../auth.service';
@@ -24,26 +24,38 @@ export class RegisterComponent implements OnInit,AfterContentInit{
   inputsAnim :any;
   constructor(private elem:ElementRef,private auth:AuthService,private router:Router,
     private fb:FormBuilder, private user:UserService,
-    uniquename:UniqueName,uniquemail:EmailConvalidator, password_repeat:PasswordRepeat) {
+    private uniquename:uniqueName,private uniquemail:uniqueEmail, private password_repeat:PasswordRepeat) {
       this.loading = false;
       this.completed = false;
-      this.registerForm = this.fb.group({
-        nome:['',[Validators.required,Validators.minLength(3),Validators.maxLength(13),Validators.pattern("[a-zA-Z_-]+[^<>/.]\\d*"),uniquename] ],
-        email:['',{
-          validators: [Validators.required,Validators.email,uniquemail]
-        }],
-        password:['',{
-          validators: [Validators.required,Validators.pattern("^(.*)(?=.*[a-z]+)(?=.*[A-Z]{1,})(?=.*\\d{2,}).*")]
-        }],
-        repeat_password: ['',{
-          validators: [Validators.required,password_repeat]
-        }],
+      this.registerForm = new FormGroup({
+        nome: new FormControl('',[
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(13),
+          Validators.pattern("[a-zA-Z_-]+[^<>/.]\\d*"),
+        ], [
+          this.uniquename.nameValidate(),
+        ]),
+        email: new FormControl('',[
+          Validators.required,
+          Validators.email,
+        ], [
+          this.uniquemail.emailValidate()
+        ]),
+        password: new FormControl('',[
+          Validators.required,
+          Validators.pattern("^(.*)(?=.*[a-z]+)(?=.*[A-Z]{1,})(?=.*\\d{2,}).*"),
+        ]),
+        repeat_password: new FormControl('',[
+          Validators.required,
+          this.password_repeat.validate,
+        ]),
       });
 
 
-
-
-
+      this.registerForm.get('password').valueChanges.subscribe((val)=>{
+        this.registerForm.get('repeat_password').updateValueAndValidity();
+      });
     }
     Register(){
       if(this.registerForm.valid){

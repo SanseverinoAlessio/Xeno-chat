@@ -1,8 +1,8 @@
 #rooms-change{border-radius: 6px;
-  box-shadow: -1px 2px 5px -1px rgba(0,0,0,0.75);border: #E3DFDF 1.5px solid;;
+  box-shadow: -1px 2px 5px -1px rgba(0,0,0,0.75);border: #E3DFDF 1.5px solid;max-width: 600px
   ;transform: scale(0,0);
   opacity: 0;transition: 0.5s !important;width: 40%;
-  z-index: 999 !important;height:72% !important  ;position:relative; ; overflow: auto;background-color: #F3F3F3;}
+  z-index: 999 !important;height:72% !important  ;position:relative; ; overflow: auto;background-color: #F3F3F3;max-height: 500px}
   #rooms-change.active{
     opacity: 1;
     transform: scale(1,1) !important;
@@ -45,7 +45,7 @@
           }
           @media only screen and (max-width: 800px) {
             .container-rooms-change{display: block !important; padding: 0px;height: 100vh}
-            #rooms-change.active{width: 100% !important; margin-left: 0px; height: auto !important; min-height: 100% !important;
+            #rooms-change.active{max-width: 800px !important;width: 100% !important; margin-left: 0px; height: auto !important; min-height: 100% !important;
               margin-top: 0px; border-radius: 0px;padding: 0px !important
             }
           }

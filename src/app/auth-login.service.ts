@@ -8,18 +8,12 @@ export class AuthLoginService implements CanActivate{
   constructor(private auth:AuthService,private router:Router) { }
   canActivate():Promise<boolean>{
     return this.auth.islogged().then((e:any)=>{
-      if(e == false){
-        e = true;
-        return e;
-      }
-      else{
-        e = false;
-        this.router.navigate(['chat']);
-        return e;
-      }
+    this.router.navigate(['chat']);
+    return false;
     }).catch((err)=>{
-      err = false;
-      return err;
+      if(err.status == 401){
+        return true;
+      }
     });
   }
 }

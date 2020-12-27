@@ -7,7 +7,6 @@ import { environment } from './../environments/environment';
 })
 export class UserService {
   option;
-
   constructor(private http:HttpClient) {
     this.option = {
       headers: new HttpHeaders({
@@ -16,39 +15,29 @@ export class UserService {
       }),
       withCredentials:true
     };
-
   }
   Add(user:object){
-
-    let http =  this.http.post(environment.serverIp + '/register',JSON.stringify(user), this.option);
+    let http =  this.http.post(environment.serverIp + '/user/register',JSON.stringify(user), this.option);
     return http;
   }
   login(user:object){
-    let http = this.http.post(environment.serverIp + '/login',JSON.stringify(user),this.option);
+    let http = this.http.post(environment.serverIp + '/user/login',JSON.stringify(user),this.option);
     return http;
   }
-  GetUser(user:string){
-
-
-    let http = this.http.get<any>(environment.serverIp +  '/user/' + user,this.option);
+  userExist(user:string){
+    let http = this.http.get<any>(environment.serverIp +  '/user/userExist/' + user,this.option);
     return http;
   }
-
   logout(){
-
-    let http = this.http.get(environment.serverIp + '/logout',this.option);
+    let http = this.http.get(environment.serverIp + '/auth/logout',this.option);
     return http;
   }
-
   getUsername(){
-    let http=this.http.get(environment.serverIp + '/getUsername',this.option);
+    let http=this.http.get(environment.serverIp + '/auth/getUsername',this.option);
     return http;
   }
-
-  getEmail(email:string){
-    let http = this.http.get(environment.serverIp + "/email/" + email,this.option);
+  emailExist(email:string){
+    let http = this.http.get(environment.serverIp + "/user/email/" + email,this.option);
     return http;
   }
-
-
 }
