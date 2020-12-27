@@ -9,7 +9,7 @@ const path = require('path');
 const secure = require('express-force-https');
 const mode = process.env.Mode || "development";
 const logged = require('./middleware/logged.js');
-const port = process.env.port || 3000;
+const port = process.env.PORT || 3000;
 const origin = process.env.origin || "http://localhost:4200";
 const chat = require('./Config/chat.js');
 
@@ -34,6 +34,10 @@ if(mode == 'production'){
     }
   });
 }
+
+app.get('/',()=>{
+  res.end('');
+});
 app.use('/user',require('./Routes/userRoutes.js'));
 app.use('/auth',logged(),require('./Routes/authRoutes.js'));
 app.get('*', (req,res)=>{

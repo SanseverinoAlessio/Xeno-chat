@@ -1,4 +1,4 @@
-const users = require('../config/dbSchema/usersSchema');
+const users = require('../Config/dbSchema/usersSchema.js');
 const addUser = (data)=>{
   let user = new users({
     nome: data.username,
