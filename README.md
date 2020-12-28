@@ -2,7 +2,7 @@
 Il server, per poter essere avviato ha bisogno di un file env, che contenga:
 L'origine da cui accettare le richieste(origin) per il cors
 Url del mongodb(mongodb)
-La chiave per creare il jsonToken(token_Key)
+La chiave per creare il jsonToken(tokenKey)
 
 # Client
 Sul client, bisogna modificare le variabili env, per poter definire a quale indirizzo inviare le richieste.
