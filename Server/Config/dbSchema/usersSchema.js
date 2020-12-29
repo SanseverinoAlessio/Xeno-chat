@@ -5,12 +5,12 @@ const schema = mongoose.Schema;
 const userSchema = new schema({
   nome: {
     type: String,
-    unique: "Il nome è già stato utilizzato",
+    unique: true,
   },
   password: String,
   email: {
     type: String,
-    unique: "L'email è già stata utilizzata",
+    unique: true,
   },
 });
 
