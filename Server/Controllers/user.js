@@ -37,7 +37,8 @@ const register = async (req,res)=>{
     res.json(inputsValidator.getErrors());
     return res.end('');
   }
-  let cryptPassword = await bcrypt.hash(password,10);
+   let salt = await bcrypt.genSalt(10);
+  let cryptPassword = await bcrypt.hash(password,salt);
   userModel.addUser({username:nome,password:cryptPassword,email:email}).then(()=>{
     res.status(200);
   }).catch((err)=>{
